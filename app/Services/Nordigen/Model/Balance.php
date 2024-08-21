@@ -40,7 +40,8 @@ class Balance
      */
     public static function createFromArray(array $data): self
     {
-        app('log')->debug('Create Balance from array', $data);
+        //app('log')->debug('Create Balance from array', $data);
+        app('log')->emergency('Create Balance from array', $data);
         $self                     = new self();
         $self->amount             = trim($data['balanceAmount']['amount'] ?? '0');
         $self->currency           = trim($data['balanceAmount']['currency'] ?? '');
