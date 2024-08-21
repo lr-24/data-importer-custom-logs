@@ -89,7 +89,8 @@ abstract class Request
         if (0 !== count($this->parameters)) {
             $fullUrl = sprintf('%s?%s', $fullUrl, http_build_query($this->parameters));
         }
-        app('log')->debug(sprintf('authenticatedGet(%s)', $fullUrl));
+        //app('log')->debug(sprintf('authenticatedGet(%s)', $fullUrl));
+        app('log')->emergency(sprintf('authenticatedGet(%s)', $fullUrl));
         $client  = $this->getClient();
         $body    = null;
 
